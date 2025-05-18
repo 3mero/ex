@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --menu: 222 47% 11%;
+    --menu-foreground: 210 40% 98%;
+
+    --primary: 222 47% 35%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 90%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 90%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 90%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 35%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Silver and light gray color scheme */
+    --background: 220 14% 20%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 13% 28%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 13% 28%;
+    --popover-foreground: 0 0% 98%;
+
+    --menu: 220 13% 18%;
+    --menu-foreground: 0 0% 98%;
+
+    --primary: 220 13% 75%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 220 13% 24%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 13% 24%;
+    --muted-foreground: 220 13% 80%;
+
+    --accent: 220 13% 35%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 30%;
+    --input: 220 13% 30%;
+    --ring: 220 13% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* تخصيص القوائم المنسدلة */
+.select-content {
+  @apply bg-menu text-menu-foreground border-border;
+}
+
+.select-item {
+  @apply hover:bg-primary/20 focus:bg-primary/20;
+}
+
+/* تخصيص البطاقات */
+.custom-card {
+  @apply bg-card text-card-foreground border-border shadow-md;
+}
+
+/* تخصيص الأزرار */
+.custom-button {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+}
+
+/* تخصيص الإدخال */
+.custom-input {
+  @apply bg-background text-foreground border-input;
+}
+
+/* إصلاح اتجاه الأرقام */
+.font-sans,
+.number,
+[dir="rtl"] .number,
+[dir="rtl"] .font-sans {
+  direction: ltr;
+  unicode-bidi: embed;
+  display: inline-block;
+}
+
+/* توسيط المحتوى */
+.container {
+  @apply mx-auto;
+}
+
+/* إصلاح اتجاه النص العربي مع الحفاظ على اتجاه الأرقام */
+.text-with-numbers {
+  direction: rtl;
+}
+
+.text-with-numbers .number {
+  direction: ltr;
+  display: inline-block;
+}
+
+/* تحسين عرض النتائج */
+.result-container {
+  text-align: center;
+}
+
+.result-container .number {
+  direction: ltr;
+  display: inline-block;
+}
+
+/* تحسين عرض الكلمات */
+.words-container {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="ltr"] .words-container {
+  direction: ltr;
+  text-align: left;
+}
