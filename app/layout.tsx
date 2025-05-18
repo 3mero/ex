@@ -1,21 +1,21 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Mona_Sans as FontSans } from "next/font/google"
+import { Noto_Sans_Arabic } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/components/language-provider"
 import { Toaster } from "@/components/ui/toaster"
 
-const fontSans = FontSans({
-  subsets: ["latin", "arabic"],
+// Usar Noto Sans Arabic que tiene soporte completo para árabe
+const fontSans = Noto_Sans_Arabic({
+  subsets: ["arabic"],
   variable: "--font-sans",
 })
 
 export const metadata: Metadata = {
   title: "محول العملات",
   description: "تطبيق متكامل لتحويل العملات",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
